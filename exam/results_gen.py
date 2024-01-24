@@ -28,11 +28,12 @@ def generate_season(year, season):
 
 
     #collects number of pages of chosen anime and randomly chooses 1
-    pages = sex["pagination"]["last_visible_page"]
+    pages = (sex["pagination"]["last_visible_page"]-1)
     rand_page = random.randint(1,pages)
     payload["page"] = rand_page
     x = requests.get(release, params=payload).text
     sex3 = json.loads(x)
+    print(sex3)
 
     print("_______________________")
 
@@ -61,7 +62,7 @@ def generate_genre(*genre_choice):
     sex = json.loads(r) #transforms into json
 
     #collects number of pages of chosen anime and randomly chooses 1
-    pages = sex["pagination"]["last_visible_page"]
+    pages = (sex["pagination"]["last_visible_page"]-1)
     rand_page = random.randint(1,pages)
     payload["page"] = rand_page
     x = requests.get(anime_url, params=payload).text
