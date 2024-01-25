@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import requests
 import json
 import random
@@ -88,3 +89,4 @@ def generate_genre(*genre_choice):
     else:
         st.write(f"Link to  trailer: {url}")
 
+>>>>>>> d1daa4ae40792807069e634a763789d0c8721faf
